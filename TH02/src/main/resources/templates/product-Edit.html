@@ -1,0 +1,20 @@
+<html xmlns:th="http://thymealeaf.org">
+
+<head>
+	<title>Products Maintenance</title>
+</head>
+
+<body>
+	<a th:href="@{/products}">Products list</a>
+	<h1>Product</h1>
+	<p>Edit product's information below'</p>
+	<br />
+	<form th:action=@{/editProduct} method="post" th:object="${product}">
+		Product code <input th:field="*{code}" readonly="true" /> <br />
+		Description <input th:field="*{desc}" readonly="true" /> <br />
+		Product price <input th:field="*{price}" readonly="true" /> <br />
+		<input type="submit" value="Update" />
+	</form>
+</body>
+
+</html>

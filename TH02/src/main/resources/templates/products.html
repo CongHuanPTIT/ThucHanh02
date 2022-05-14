@@ -1,0 +1,48 @@
+<html xmlns:th="http://thymealeaf.org">
+
+<head>
+	<title>Products Maintenance</title>
+	<style>
+		table,
+		th,
+		td,
+		tr {
+			border: 1px solid black;
+		}
+
+		td {
+			padding-right: 30px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<br />
+	<table>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<th:block th:each="product : ${productList}">
+			<tr>
+				<td>
+					<p th:text="${product.code}"></p>
+				</td>
+				<td>
+					<p th:text="${product.desc}"></p>
+				</td>
+				<td>
+					<p th:text="${product.price}"></p>
+				</td>
+				<td><a th:href="@{/product-Edit/} + ${product.code}">Edit</a></td>
+				<td><a th:href="@{/product-Delete/} + ${product.code}">Delete</a></td>
+			</tr>
+		</th:block>
+	</table>
+</body>
+
+</html>
